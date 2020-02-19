@@ -1,0 +1,37 @@
+pyramid_levels: 6
+pyramid_stop_level: 1
+constraints_weight: 0.0
+landmarks_weight: 0.0
+landmarks_decay: 2.0
+landmarks_stop_level: 0
+block_size: [16, 16, 16]
+block_energy_epsilon: 1e-7
+max_iteration_count: -1
+step_size: 0.5
+regularization_weight: 0.35
+regularization_scale: 1
+regularization_exponent: 2.0
+# weight*(scale*delta)^exponent
+
+levels:
+    0:
+        max_iteration_count: 20
+    1:
+        max_iteration_count: 40
+
+image_slots:
+
+  # fat
+  - resampler: gaussian
+    normalize: true
+    cost_function:
+      - function: ncc
+        weight: 0.5
+
+
+  # water
+  - resampler: gaussian
+    normalize: true
+    cost_function:
+      - function: ncc
+        weight: 0.5

@@ -1,0 +1,11 @@
+**dicomToProjection:**
+Extract fused volumes (_.nrrd_) and mean intensity projections (_.npy_) from UK Biobank neck-to-knee body MRI DICOM data (field 20201).
+
+**labelFormatting:**
+Extract values for chosen subjects from UK Biobank metadata csv files.
+
+**cnn**
+Train and validate the VGG16 or ResNet50, using .npy images as input and the output of labelFormatting as target values.
+
+**registration:**
+Parameters for co-alignment of MRI volumes. Used to aggregate saliency maps (code for saliency mapping is not yet included).
