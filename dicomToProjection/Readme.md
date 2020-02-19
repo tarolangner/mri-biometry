@@ -1,4 +1,4 @@
-Extract fused 3d volumes (_.nrrd_) and 2d mean intensity projections (_.npy_) from UK Biobank neck-to-knee body MRI DICOM data.
+Extract fused 3d volumes (_.nrrd_) and 2d mean intensity projections (_.npy_) from UK Biobank neck-to-knee body MRI DICOM data (field 20201).
 
 Only the 2d mean intensity projections are needed as input to the network.
 
