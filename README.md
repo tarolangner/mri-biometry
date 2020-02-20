@@ -16,6 +16,11 @@ Please note that the UK Biobank data used in the publication can not be made pub
 
 For any questions and suggestions, contact me at: taro.langner@surgsci.uu.se
 
+# Citation
+If you use this code for any derived work, please consider citing [2] and linking this GitHub.
+
+# References
+
 [1] [_T. Langner, J. Wikstrom, T. Bjerner, H. Ahlstrom, and J. Kullberg, “Identifying morphological indicators of aging with neural networks on large-scale whole-body MRI,” IEEE Transactions on Medical Imaging, pp. 1–1, 2019._](https://ieeexplore.ieee.org/document/8887538)\
 [2] [_T. Langner, H Ahlström, and J. Kullberg, “Large-scale biometry with interpretable neural network regression on UK Biobank body MRI,” arXiv:2002.06862 [cs], Feb. 2020. arXiv: 2002.06862_](https://arxiv.org/abs/2002.06862)\
 [3] [_S. Ekström, F. Malmberg, H. Ahlström, J. Kullberg, and R. Strand, “Fast Graph-Cut Based Optimization for Practical Dense Deformable Registration of Volume Images,” arXiv:1810.08427 [cs], Oct. 2018. arXiv: 1810.08427_](https://arxiv.org/abs/1810.08427)\
