@@ -103,9 +103,10 @@ def storeOutput(volume_w, volume_f, output_path, origin):
         mip_w = formatMip(volume_w)
         mip_f = formatMip(volume_f)
 
-        mip_out = np.dstack((mip_w, mip_f, np.zeros(mip_w.shape)))
-
+        #mip_out = np.dstack((mip_w, mip_f, np.zeros(mip_w.shape)))
         #cv2.imwrite(output_path + ".png", mip_out)
+
+        mip_out = np.dstack((mip_w, mip_f)))
         np.save(output_path + ".npy", mip_out.transpose(2, 0, 1))
 
     if c_store_volumes:
