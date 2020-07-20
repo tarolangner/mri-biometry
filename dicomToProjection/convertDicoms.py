@@ -29,6 +29,7 @@ c_trim_axial_slices = 4 # Trim this many axial slices from the output volume to 
 c_use_gpu = True # If yes, use numba for gpu access, otherwise use scipy on cpu
 
 c_store_mip = True # If yes, extract 2d mean intensity projections as .npy
+c_store_ff_slice = False # If If yes, extract single fat fraction slice with liver coverage
 c_store_volumes = False # If yes, extract 3d volumes as .nrrd
 
 
@@ -109,16 +110,25 @@ def storeOutput(volume_w, volume_f, output_path, origin):
         mip_out = np.dstack((mip_w, mip_f))
         np.save(output_path + ".npy", mip_out.transpose(2, 0, 1))
 
-    if c_store_volumes:
 
-        storeNrrd(volume_w, output_path + "_W", origin)
-        storeNrrd(volume_f, output_path + "_F", origin)
+    if c_store_ff_slice or c_store_volumes:
 
         (volume_wf, volume_ff, volume_mask) = calculateFractions(volume_w, volume_f)
 
-        storeNrrd(volume_wf, output_path + "_WF", origin)
-        storeNrrd(volume_ff, output_path + "_FF", origin)
-        storeNrrd(volume_mask, output_path + "_mask", origin)
+        if c_store_ff_slice:
+
+            slice_ff = formatSliceFF(volume_ff, volume_mask)
+            np.save(output_path + "_ff.npy", slice_ff)
+
+
+        if c_store_volumes:
+
+            storeNrrd(volume_w, output_path + "_W", origin)
+            storeNrrd(volume_f, output_path + "_F", origin)
+
+            storeNrrd(volume_wf, output_path + "_WF", origin)
+            storeNrrd(volume_ff, output_path + "_FF", origin)
+            storeNrrd(volume_mask, output_path + "_mask", origin)
         
 
 def calculateFractions(volume_w, volume_f):
@@ -159,6 +169,35 @@ def storeNrrd(volume, output_path, origin):
 
     #
     nrrd.write(output_path + ".nrrd", volume, header, compression_level=1)
+
+
+def formatSliceFF(volume, mask):
+
+    bed_width = 22
+    volume = volume[:, :volume.shape[1]-bed_width, :]
+    mask = mask[:, :mask.shape[1]-bed_width, :]
+
+    # Determine mass of body mask
+    mass = np.count_nonzero(mask) # centre of total mass
+    mass_sag_half = np.count_nonzero(mask[:int(mask.shape[0] / 2), :, :]) # centre of mass of right half of body
+    
+    # Coronal slice at centre of mass
+    com_cor = getSliceOfMass(mass / 2, mask, 1)
+    slice_cor = formatFractionSlice(volume[:, com_cor, :])
+
+    # Sagittal slice at centre of mass of right body half
+    com_sag = getSliceOfMass(mass_sag_half / 2, mask, 0)
+    slice_sag = formatFractionSlice(volume[com_sag, :, :])
+
+    # Combine to single output
+    slice_out = np.concatenate((slice_cor, slice_sag), 1)
+
+    slice_out = slice_out[:176, :]
+    slice_out = cv2.resize(slice_out, (376, 176))
+
+    slice_out = slice_out.reshape(1, 176, 376)
+
+    return slice_out
 
 
 # Generate mean intensity projection 
