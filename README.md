@@ -2,7 +2,7 @@
 
 This repository contains code samples and documentation for regression with convolutional neural networks on medical images, described in the following publications: \
 [_"Identifying morphological indicators of aging with neural networks on large-scale whole-body MRI"_](https://ieeexplore.ieee.org/document/8887538) [1]\
-[_"Large-scale biometry with interpretable neural network regression on UK Biobank body MRI"_](https://arxiv.org/abs/2002.06862) [2]
+[_"Large-scale biometry with interpretable neural network regression on UK Biobank body MRI"_](https://arxiv.org/abs/2002.06862) [2] \
 [_"Large-scale inference of liver fat with neural netowrks on UK Biobank body MRI"_](https://arxiv.org/abs/2006.16777) [3]
 
 Contents:
@@ -10,7 +10,7 @@ Contents:
 - Formatting of UK Biobank neck-to-knee body MRI (into volumes and 2D formats)
 - Parameters for registration of UK Biobank neck-to-knee MRI with [4]
 
-The code contains the old network configuration [1] in comments, but by default uses the new, optimized hyperparameters and learning policy [2]. 
+The code contains the old network configuration [1] in comments, but by default uses the new, optimized hyperparameters and learning policy [2]. It also contains code for the dedicated liver fat fraction measurement, including a trained snapshot [3].
 The saliency aggregation is currently not included. We used a modified [_GitHub repository by Utku Ozbulak_](https://github.com/utkuozbulak/pytorch-cnn-visualizations), which implements guided gradient-weighted class activation maps [5].
 
 Please note that the UK Biobank data used in the publication can not be made publically available. However, the calculated reference values and split IDs used for the experiments have been shared as return data of application 14237 with the UK Biobank, so that reproducing the results should be possible. 
