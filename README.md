@@ -9,6 +9,7 @@ Contents:
 - PyTorch code for network models, training and inference
 - Formatting of UK Biobank neck-to-knee body MRI (into volumes and 2D formats)
 - Parameters for registration of UK Biobank neck-to-knee MRI with [4]
+- Uncertainty code (work in progress)
 
 The code contains the old network configuration [1] in comments, but by default uses the new, optimized hyperparameters and learning policy [2]. It also contains code for the dedicated liver fat fraction measurement [3], including [a trained snapshot, which can be found here](https://uppsala.box.com/s/q98obl6649in6nzaukiwo6dnwxg9gmga).  
 The saliency aggregation is currently not included. We used a modified [_GitHub repository by Utku Ozbulak_](https://github.com/utkuozbulak/pytorch-cnn-visualizations), which implements guided gradient-weighted class activation maps [5].
