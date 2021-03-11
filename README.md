@@ -24,7 +24,7 @@ If you use this code for any derived work, please consider citing [2] and linkin
 # References
 
 [1] [_T. Langner, J. Wikström, T. Bjerner, H. Ahlstrom, and J. Kullberg, “Identifying morphological indicators of aging with neural networks on large-scale whole-body MRI,” IEEE Transactions on Medical Imaging, pp. 1–1, 2019._](https://ieeexplore.ieee.org/document/8887538)\
-[2] [_T. Langner, H. Ahlström, and J. Kullberg, “Large-scale biometry with interpretable neural network regression on UK Biobank body MRI,” arXiv:2002.06862 [cs], Feb. 2020. arXiv: 2002.06862_](https://arxiv.org/abs/2002.06862)\
-[3] [_T. Langner, R. Strand, H. Ahlström, and J. Kullberg, “Large-scale inference of liver fat with neural networks on UK Biobank body MRI,” arXiv:2006.16777 [cs], Jun. 2020. arXiv: 2006.16777_](https://arxiv.org/abs/2006.16777)\
+[2] [_T. Langner, H. Ahlström, and J. Kullberg, “Large-scale biometry with interpretable neural network regression on UK Biobank body MRI,” Scientific reports, 10.1 (2020): 1-9._](https://www.nature.com/articles/s41598-020-74633-5)\
+[3] [_T. Langner, R. Strand, H. Ahlström, and J. Kullberg, “Large-scale inference of liver fat with neural networks on UK Biobank body MRI,” International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCA). Springer, Cham, 2020._](https://link.springer.com/chapter/10.1007/978-3-030-59713-9_58)\
 [4] [_S. Ekström, F. Malmberg, H. Ahlström, J. Kullberg, and R. Strand, “Fast Graph-Cut Based Optimization for Practical Dense Deformable Registration of Volume Images,” arXiv:1810.08427 [cs], Oct. 2018. arXiv: 1810.08427_](https://arxiv.org/abs/1810.08427)\
 [5] [_R. R. Selvaraju, M. Cogswell, A. Das, R. Vedantam, D. Parikh, and D. Batra, “Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization,” in 2017 IEEE International Conference on Computer Vision (ICCV), (Venice), pp. 618–626, IEEE, Oct. 2017._](https://arxiv.org/abs/1610.02391)
