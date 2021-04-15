@@ -144,7 +144,10 @@ def getDataLoader(path_gt, path_img, aug_t, B, path_out, use_standardization):
     params = {"batch_size": B,
               "shuffle":True,
               "num_workers": 8,
-              "pin_memory": True}
+              "pin_memory": True,
+              # use different random seeds for each worker
+              # courtesy of https://github.com/xingyizhou/CenterNet/issues/233
+              "worker_init_fn" : lambda id: np.random.seed(torch.initial_seed() // 2**32 + id) }
 
     loader = data.DataLoader(dataset, **params)
 
