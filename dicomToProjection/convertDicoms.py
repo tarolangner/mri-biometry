@@ -200,6 +200,32 @@ def formatSliceFF(volume, mask):
     return slice_out
 
 
+def getSliceOfMass(mass, mask, axis):
+
+    com_i = 0
+
+    shifts = np.array(mask.shape)
+
+    for i in range(mask.shape[axis]):
+        shifts[axis] = i
+        mass_i = np.count_nonzero(mask[:shifts[0], :shifts[1], :shifts[2]])
+        if mass_i >= mass:
+            com_i = i
+            break
+
+    return com_i
+
+
+def formatFractionSlice(img):
+
+    img = np.rot90(img, 1)
+
+    img = np.clip(img / 500., 0, 1) * 255 # Encode percentages of 0-50%
+    img = img.astype("uint8")
+
+    return img
+
+
 # Generate mean intensity projection 
 def formatMip(volume):
 

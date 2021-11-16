@@ -1,5 +1,7 @@
 # Deep Regression for Biometry on Body MRI
 
+## Note: There is [_a more versatile and user-friendly implementation_](https://github.com/tarolangner/ukb_mimir) available now
+
 This repository contains code samples and documentation for regression with convolutional neural networks on medical images, described in the following publications: \
 [_"Identifying morphological indicators of aging with neural networks on large-scale whole-body MRI"_](https://ieeexplore.ieee.org/document/8887538) [1]\
 [_"Large-scale biometry with interpretable neural network regression on UK Biobank body MRI"_](https://arxiv.org/abs/2002.06862) [2] \
