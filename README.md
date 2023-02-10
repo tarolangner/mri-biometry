@@ -2,6 +2,8 @@
 
 ## Note: There is [_a more versatile and user-friendly implementation_](https://github.com/tarolangner/ukb_mimir) available now
 
+![title](figures/header.png)
+
 This repository contains code samples and documentation for regression with convolutional neural networks on medical images, described in the following publications: \
 [_"Identifying morphological indicators of aging with neural networks on large-scale whole-body MRI"_](https://ieeexplore.ieee.org/document/8887538) [1]\
 [_"Large-scale biometry with interpretable neural network regression on UK Biobank body MRI"_](https://arxiv.org/abs/2002.06862) [2] \
@@ -18,7 +20,7 @@ The saliency aggregation is currently not included. We used a modified [_GitHub 
 
 Please note that the UK Biobank data used in the publication can not be made publically available. However, the calculated reference values and split IDs used for the experiments have been shared as return data of application 14237 with the UK Biobank, so that reproducing the results should be possible. 
 
-For any questions and suggestions, contact me at: taro.langner@surgsci.uu.se
+For any questions and suggestions, feel free to reach out!
 
 # Citation
 If you use this code for any derived work, please consider citing [2] and linking this GitHub.
